@@ -1,6 +1,13 @@
 # GOLEM
 
-## TODO
+
+## Run the webstrates poxy
+
+      $ docker run --name webstrates  -p 80:80 -v ${PWD}/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx
+
+## Run a golem
+
+      $ docker run -ti -p 9222:9222 -e "WEBSTRATEID=xxxxxx" --security-opt seccomp=${PWD}/chrome.json --name golem-xxxxxx --link webstrates webstrates/golem
 
 ## Basic-auth
 
